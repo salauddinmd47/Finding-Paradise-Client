@@ -1,0 +1,14 @@
+
+.booking-form form{
+    background-color: aliceblue;
+    margin: 10px 0;
+    padding: 20px 15px;
+    width: 100%;  
+}
+.booking-form form input, select{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+}

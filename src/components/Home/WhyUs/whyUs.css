@@ -1,0 +1,8 @@
+.why-container{
+    background-image: url(../../../images/why-us-section-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 20px 0;
+}
