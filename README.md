@@ -2,7 +2,7 @@
 
 https://finding-paradise.web.app/
 
-## Available Scripts
+## Available Scripts `reqct`, `react-router`, `firebase`, `node js`,`express`, `mongodb`
 
 In the project directory, you can run:
 
