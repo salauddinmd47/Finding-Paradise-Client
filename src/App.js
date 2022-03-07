@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddPackage from "./components/AddPackage/AddPackage";
-import AllOrder from "./components/AllOrder/AllOrder";
 import Booking from "./components/Booking/Booking";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";

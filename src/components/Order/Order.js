@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Order = ({order}) => {
-    console.log(order)
-    const {_id, packageName, name, duration, people} = order
+const Order = (props) => { 
+    const {_id, packageName, name, duration, people} = props.order
+    const {handleCancelOrder} = props;
     return (
         <tr>
             <td>{_id}</td>
@@ -10,7 +10,7 @@ const Order = ({order}) => {
              <td>{packageName}</td>
             <td>{duration}</td>
             <td>{people}</td>
-            <td className="text-warning">pending...</td>
+            <td ><button onClick={()=>handleCancelOrder(_id)} className=" btn btn-danger">cancel</button></td>
         </tr>
     );
 };

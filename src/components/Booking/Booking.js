@@ -3,7 +3,6 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import usePackages from "../../hooks/usePackages";
 import "./Booking.css";
 const Booking = () => {
   const { packageId } = useParams();
@@ -13,18 +12,17 @@ const Booking = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/packages/${packageId}`)
+    fetch(`https://macabre-mansion-28000.herokuapp.com/packages/${packageId}`)
       .then((res) => res.json())
       .then((data) => setPackage(data));
   }, [packageId]);
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:4000/booking", {
+    fetch("https://macabre-mansion-28000.herokuapp.com/booking", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -67,7 +65,7 @@ const Booking = () => {
           <label>Package name;</label>
           <br />
           <select {...register("packageName")}>
-            <option value={packeage.title}>select</option>
+            {/* <option value={packeage.title}>select</option> */}
             <option value="Hot Baloon Special Journey">
               Hot Baloon Special Journey
             </option>
@@ -85,7 +83,7 @@ const Booking = () => {
           <label>No. of day</label>
           <br />
           <select {...register("duration")}>
-            <option value={packeage.duration}>select</option>
+            {/* <option value={packeage.duration}>select</option> */}
             <option value="2">2</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -95,17 +93,18 @@ const Booking = () => {
           <label htmlFor="">No. of people</label>
           <br />
           <select {...register("people")}>
-            <option value={packeage.people}>select</option>
+            {/* <option value={packeage.people}>select</option> */}
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
           </select>
+          <br /> 
           {errors.email && (
             <span className="error">This field is required</span>
           )}
-          <br />
+          <br /> 
           <input
             className="text-center btn-warning"
             type="submit"

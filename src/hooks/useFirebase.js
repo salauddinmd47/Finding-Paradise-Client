@@ -19,11 +19,19 @@ import initializeAuthentication from "../components/Login/Firebase/firebase.init
       setIsLoading(true);
       signInWithPopup(auth, googleProvider).then((result) => {
         const user = result.user;
-        console.log(user);
         setUser(user);
+        console.log(user)
       })
       .finally(()=>setIsLoading(false));
     };
+
+    const logOut = () => {
+      setIsLoading(true);
+      signOut(auth)
+      .then(result=>{ })
+      .finally(()=> setIsLoading(false)); 
+    };
+
     useEffect(() => {
       const unsubscribed = onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -35,13 +43,8 @@ import initializeAuthentication from "../components/Login/Firebase/firebase.init
       });
       
       return () => unsubscribed;
-    }, []);
-    const logOut = () => {
-      setIsLoading(true);
-      signOut(auth)
-      .then(result=>{})
-      .finally(()=> setIsLoading(false)); 
-    };
+    }, [auth]);
+    
     return {
       user,
       isLoading,

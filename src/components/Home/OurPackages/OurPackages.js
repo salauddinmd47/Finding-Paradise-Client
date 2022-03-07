@@ -5,7 +5,7 @@ import Package from "../Package/Package";
 const OurPackages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/packages")
+    fetch("https://macabre-mansion-28000.herokuapp.com/packages")
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);

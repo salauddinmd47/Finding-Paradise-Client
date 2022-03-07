@@ -17,4 +17,10 @@
  }
  li a{
      text-decoration: none;
+     color:aliceblue;
+     transition: 0.5s;
+ }
+ li a:hover{
+      
+     color:rgb(181, 195, 207)
  }

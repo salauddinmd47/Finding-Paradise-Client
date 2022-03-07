@@ -4,17 +4,17 @@ import AllOrder from '../AllOrder/AllOrder';
 const TotalOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(()=>{
-      fetch("http://localhost:4000/myBookings")
+      fetch("https://macabre-mansion-28000.herokuapp.com/myBookings")
       .then((res) => res.json())
       .then((data) => setOrders(data))
     },[])
     const handleRemoveOrder= id =>{
-        fetch(`http://localhost:4000/myBookings/${id}`,{
+        fetch(`https://macabre-mansion-28000.herokuapp.com/myBookings/${id}`,{
             method:"DELETE"
         })
         .then(res => res.json())
         .then(data=>{
-            const proceed = window.confirm('Are sure you want to remove this Order')
+            const proceed = window.confirm('Are sure you want to remove this Booking')
             if(proceed){
                 if(data.deletedCount){
                     const remainingOrders = orders.filter(order=> order._id !== id)

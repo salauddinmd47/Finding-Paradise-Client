@@ -3,9 +3,8 @@ import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Package = ({ packg }) => {
-  console.log(packg);
   const { title, img, des, price, destination, _id } = packg;
-  console.log(packg.title);
+
   return (
     <div>
       <Col>

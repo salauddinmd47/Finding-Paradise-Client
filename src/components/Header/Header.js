@@ -26,13 +26,13 @@ const Header = () => {
               <NavLink className="nav-link text-dark" to='/manageOrders'>Manage Orders</NavLink>
               <NavLink className="nav-link text-dark" to='/addPackage'>Add Package</NavLink>
               {
-                user.email && <NavLink className="nav-link text-dark" to='/myorders'>
+                user.displayName && <NavLink className="nav-link text-dark" to='/myorders'>
                   My Orders
                 </NavLink>
               }
               {user.displayName && <NavLink className="nav-link" to="/#">{user.displayName}</NavLink>}
               {
-                !user.email?<NavLink className="nav-link text-dark bg-warning " to="/login">
+                !user.displayName?<NavLink className="nav-link text-dark bg-warning " to="/login">
                 Login
               </NavLink>:<button className="border-0 bg-danger" onClick={logOut}>logout</button> 
               
