@@ -23,7 +23,7 @@ const Header = () => {
                 Home
               </NavLink>
              
-              <NavLink className="nav-link text-dark" to='/manageOrders'>Manage Orders</NavLink>
+              <NavLink className="nav-link text-dark" to='/manageOrders'>Manage </NavLink>
               <NavLink className="nav-link text-dark" to='/addPackage'>Add Package</NavLink>
               {
                 user.displayName && <NavLink className="nav-link text-dark" to='/myorders'>
